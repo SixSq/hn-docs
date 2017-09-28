@@ -1,8 +1,9 @@
 Create API Key/Secret
 =====================
 
-Nuvla can support the use of generated API key/secret pairs for
-accessing the service.  They are intended to provide more control over
+Nuvla supports the use of generated API key/secret pairs for
+accessing the service.  Compared to other authentication methods,
+they provide more control over
 access granted to clients accessing Nuvla via the API and command
 line.
 
@@ -15,8 +16,8 @@ other authentication mechanisms:
    (time-to-live, TTL), disallow access after the TTL has expired.
  - Long-lived clients can use API key/secret pairs with an unlimited
    lifetime to simplify credential management.
- - Any API key/secret can be revoked at any time and independently of
-   any other credentials.
+ - **Any API key/secret can be revoked at any time and independently of
+   any other credentials.**
 
 The internal process for handling authentication when using API
 key/secrets is the following:
@@ -42,7 +43,7 @@ pairs can generated from the command line.
 Enabling Account Password
 -------------------------
 
-For those people authenticating via eduGAIN and Elixir AAI, **you must
+For users authenticating via eduGAIN and Elixir AAI, **you must
 enable a password for your Nuvla account**. To do this, use the password
 reset function.
 
@@ -58,7 +59,7 @@ You will need the **complete** username.
    :align: center
 
 3. Logout from Nuvla and start the password reset process.  The link is
-shown in the screenshot below.
+shown in the screenshot below:
 
 .. figure:: ../images/api-key-reset-password.png
    :alt: Reset Password Link
@@ -76,15 +77,15 @@ a confirmation email to your address.
 5. Visit the link provided in the email.  This will then send you another
 email with a randomly generated password.
 
-6. Be sure to setup the `ss-curl` alias.  See the SlipStream cURL_
-documentation for setting up the correct alias.
-
-7. Using your username and the randomly generated password, log into
-the server via the command line using the `ss-curl` alias.  Details
-can be found in the `SlipStream documentation
+6. Using your username and the randomly generated password, log into
+the server via the command line using the `ss-curl` alias.  Details on how to setup the
+`ss-curl` alias can be found in the `SlipStream documentation
 <http://ssdocs.sixsq.com/en/latest/tutorials/ss/automating-slipstream.html#ss-curl-login>`_.
 
-Now with all that completed, you can now create an API key/secret.
+.. note:: Be sure to setup the `ss-curl` alias.  See the SlipStream cURL_
+documentation for setting up the correct alias.
+
+With all that completed, you can now create an API key/secret.
 
 Credential Creation
 -------------------
