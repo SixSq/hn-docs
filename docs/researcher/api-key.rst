@@ -79,9 +79,9 @@ email with a randomly generated password.
 6. Be sure to setup the `ss-curl` alias.  See the SlipStream cURL_
 documentation for setting up the correct alias.
 
-7. Using your username and the randomly generated password, the server
-via the command line using the `ss-curl` alias.  Details can be found
-in the `SlipStream documentation
+7. Using your username and the randomly generated password, log into
+the server via the command line using the `ss-curl` alias.  Details
+can be found in the `SlipStream documentation
 <http://ssdocs.sixsq.com/en/latest/tutorials/ss/automating-slipstream.html#ss-curl-login>`_.
 
 Now with all that completed, you can now create an API key/secret.
@@ -89,8 +89,7 @@ Now with all that completed, you can now create an API key/secret.
 Credential Creation
 -------------------
 
-Once logged in, you can then generate new API key/secret
-credentials. The process follows the standard CIMI creation pattern.
+Once logged in, you can then generate new API key/secret credentials.
 The details can be found in the `SlipStream API Documentation
 <http://ssapi.sixsq.com/#credential-(cimi)>`_ (API Key and Secret
 section).
@@ -100,8 +99,11 @@ credential:
 
 .. code-block:: json
 
-   {"credentialTemplate" : {"href" : "credential-template/generate-api-key",
-                            "ttl" : 86400}
+   {
+     "credentialTemplate" : {
+                              "href" : "credential-template/generate-api-key",
+                              "ttl" : 86400
+                             }
    }
 
 The `ttl` parameter for the API key/secret lifetime (TTL) is optional.
@@ -156,7 +158,7 @@ doing the following:
      https://nuv.la/api/credential/05797630-c1e2-488b-96cd-2e44acc8e286
 
 Once the credential is deleted/revoked, it can no longer be used to
-authenticate with the Nuvla.
+authenticate with Nuvla.
 
 
 .. _cURL: http://ssdocs.sixsq.com/en/latest/tutorials/ss/automating-slipstream.html#curl 
