@@ -31,66 +31,40 @@ client for accessing Windows machines.
 Cloud Provider Configuration
 ----------------------------
 
-Exoscale
-~~~~~~~~
+The general configuration of the cloud accounts follow a
+hierarchichal approach, as show in the picture below.
 
-The configuration of your account for Exoscale should have been done
-for you, when you initially contacted SixSq support or your realm
-administrator.  If this is not the case but you have your Exoscale
-credentials, you can follow the `Exoscale Cloud Configuration`_
-instructions.  If you do not have credentials, contact the SixSq
-support.
-
-Open Telekom Cloud
-~~~~~~~~~~~~~~~~~~
-
-The account manager for each Buyers Group organization is responsible
-for creating user accounts.  If you don't have one, then contact your
-account manager.
-
-Once you have your account, you'll have to configure your Nuvla
-account with your credentials.  To find them:
-
-1. Log in to your OTC account.
-
-2. On your home page, click on the "My Credential" link.
-
-.. figure:: ../images/otcHome.png
-   :alt: OTC Home Page
+.. figure:: ../images/hnaccounts.png
+   :alt: Account Configurations 
    :width: 100%
    :align: center
 
-3. On the credential page, you can find all of the information that
-   you will need to configure your Nuvla account.  The fields on shown
-   on the figure and listed below.
+For Exoscale, there is a top-level organization which owns and 
+manages all the Buyers Group tenants. On each tenant then, the 
+respective organization administrator is also given ownership. 
+For OTC and Advania, this top-level organization does not exist 
+but the Buyers Group tenants are structured the same way - with 
+the respective tenant administrator as owner and a SixSq (monitoring) account 
+as a technical user.
 
-.. figure:: ../images/otcCredential.png
-   :alt: OTC Credential Page
+With this setup, it is ensured that all the cloud accounts will be 
+automatically setup in Nuvla, given that users have the 
+necessary rights to provision resources.
+
+To grant these rights, each account manager should:
+
+1. Login into `SixSq's Federated Identity Portal`_
+2. Select the users (or groups of users) who need provisioning access, 
+and assign them with the role **can_deploy** (which has already been created).
+
+.. figure:: ../images/kc-can_deploy.png
+   :alt: Account Configurations 
    :width: 100%
    :align: center
 
-The fields that you need are:
+Once this is done, the affected users will automatically get access 
+to the cloud credentials for Exoscale, OTC and Advania in Nuvla, upon login.
 
- - User name
- - Domain Name
- - Password
- - Project name
 
-Using these values, you can then configure your Nuvla account.
+.. _`SixSq's Federated Identity Portal`: https://fed-id.nuv.la/auth
 
-To configure your Nuvla account for OTC, go to your profile page and
-click on "Edit...".  Find the section "open-telekom-de1" and open that
-section. It should look similar to the following figure.
-
-.. figure:: ../images/nuvlaOTCConfiguration.png
-   :alt: Nuvla Configuration for OTC
-   :width: 100%
-   :align: center
-
-Provide the values of the fields from the information on your OTC
-credential page and then save your profile.  You should be able to use
-OTC cloud resources now.
-
-.. _`Remote Machine Access`: http://ssdocs.sixsq.com/en/latest/tutorials/ss/appendix.html#remote-machine-access
-
-.. _`Exoscale Cloud Configuration`: http://ssdocs.sixsq.com/en/latest/tutorials/ss/prerequisites.html#exoscale
