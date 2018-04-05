@@ -7,8 +7,7 @@ For the browser-based interfaces to Nuvla and Onedata services, you can directly
 use the credentials for your Identity Provider in the eduGAIN and Elixir AAI federations.
 For API and command line interface access to Nuvla, the use of revocable API key/secret pairs are recommended.
 
-Generating API key/secret on Nuvla
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Generating API key/secret on Nuvla
 
 - Define the following alias::
 
@@ -71,8 +70,7 @@ Note carefully the secret (secretKey) that is returned from the server.
 The “key” is the value of “resource-id”. This secret is not stored on the server and cannot be recovered.
 
 
-Using Libcloud for Nuvla deployment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+### Using Libcloud for Nuvla deployment
 
 Using Libcloud directly on Advania, Exoscale, OTC
 -------------------------------------------------
