@@ -95,7 +95,11 @@ Example::
 
 
 Using Libcloud for Nuvla deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- You will need the latest version of the `slipstream-libcloud-driver`::
+
+    pip install slipstream-libcloud-driver
 
 - Open a python session::
 
@@ -190,7 +194,7 @@ Using Libcloud for Nuvla deployment
 
 - Log into Nuvla using API key and secret::
 
-    # KEY and SEare taken from the environment
+    # KEY and SECRET taken from the environment
 
     ss = slipstream_driver(os.environ["KEY"],
                            os.environ["SECRET"],
@@ -243,5 +247,85 @@ Using Libcloud for Nuvla deployment
      ss.destroy_node(node)
 
 
-Using Libcloud directly on Advania, Exoscale, OTC
--------------------------------------------------
+Using Libcloud directly on Exoscale
+-----------------------------------
+
+- Open a python session::
+
+  $ python
+
+- Import convenience modules::
+
+    import os
+    from pprint import pprint as pp
+
+- Require module for the driver::
+
+    from libcloud.compute.providers import get_driver
+
+- Set variables for expected deployment::
+
+    location_name = 'ch-gva-2'
+    image_name = 'Linux CentOS 7.4 64-bit 10G Disk (2018-01-08-d617dd)'
+    size_name = 'Micro'
+    deployment_name='libcloud-example'
+
+- Set your Exoscale Key and Secret::
+
+    key=....
+    secret=...
+
+- create the driver::
+
+    exoscale_driver = get_driver('exoscale')
+
+- Log into Exoscale using API key and secret::
+
+    exo = exoscale_driver(key,secret)
+
+- Get location::
+
+     locations = {l.name: l for l in exo.list_locations()}
+     location = locations.get(location_name)
+
+- Get image::
+
+    images = {i.extra['displaytext']: i for i in exo.list_images(location=location)}
+    image = images.get(image_name)
+
+- Specifiy expected size::
+
+     sizes = {s.name: s for s in exo.list_sizes()}
+     size = sizes.get(size_name)
+
+- Deploy the node::
+
+   # Last parameter is optional, but is set here to allow SSH connectivity to the instance
+   node = exo.create_node(name=deployment_name, size=size, image=image, location=location, ex_security_groups=['slipstream_managed'] )
+
+At this stage you may check the instance from Exoscale portal
+
+.. figure:: ../../images/libcloud-exo.png
+   :alt: Libcloud on Exoscale
+   :width: 100%
+   :align: center
+
+
+- Display some results::
+
+   pp(node)
+   pp(node.public_ips)
+   pp(node.extra['password'])
+
+- Display help message for SSH connection to the running instance::
+
+     msg =""" SSH command :
+     $ ssh centos@{}
+     # NB : password is {}"""
+
+     print msg.format(node.public_ips[0], node.extra['password'])
+
+
+- Destroy the node (i.e terminate the deployment)::
+
+     exo.destroy_node(node)
