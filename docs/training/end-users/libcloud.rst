@@ -7,11 +7,25 @@ For the browser-based interfaces to Nuvla and Onedata services, you can directly
 use the credentials for your Identity Provider in the eduGAIN and Elixir AAI federations.
 For API and command line interface access to Nuvla, the use of revocable API key/secret pairs are recommended.
 
-### Generating API key/secret on Nuvla
+
+Enabling Account Password
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For users authenticating via eduGAIN and Elixir AAI, **you must
+enable a password for your Nuvla account**. To do this, see :ref:`enabling-pwd`
+
+
+Generating API key/secret on Nuvla
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Define the following alias::
 
   $ alias ss-curl="curl --cookie-jar ~/cookies -b ~/cookies -sS"
+
+Windows users would make an equivalent with::
+
+  >doskey ss-curl=curl --cookie-jar "%USERPROFILE%\cookies" -b "%USERPROFILE%\cookies" -sS $*
+
 
 - Create a json file defining the nuvla session with your <username> and <password>::
 
@@ -65,12 +79,169 @@ To actually create the new credential::
     "resource-id" : "credential/05797630-c1e2-488b-96cd-2e44acc8e286",
     "secretKey" : "..."
   }
-  
-Note carefully the secret (secretKey) that is returned from the server.
-The “key” is the value of “resource-id”. This secret is not stored on the server and cannot be recovered.
+
+- Store KEY and SECRET as environment variable
+
+Copy the secret (secretKey) that is returned from the server and export it::
+
+  $ export SECRET=<...>
+
+NB : This secret is not stored on the server and cannot be recovered.
+
+The `key` is the value of `resource-id` (without the `credential\ ` prefix).
+Example::
+
+  $ export KEY=05797630-c1e2-488b-96cd-2e44acc8e286
 
 
-### Using Libcloud for Nuvla deployment
+Using Libcloud for Nuvla deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- Open a python session::
+
+  $ python
+
+- Import convenience modules::
+
+    import os
+    from pprint import pprint as pp
+
+- require modules for the slipstream driver::
+
+    import slipstream.libcloud.compute_driver
+    from libcloud.compute.providers import get_driver
+
+- create the driver itself::
+
+    slipstream_driver = get_driver('slipstream')
+
+- Log into Nuvla using API key and secret::
+
+    # KEY and SEare taken from the environment
+
+    ss = slipstream_driver(os.environ["KEY"],
+                           os.environ["SECRET"],
+                           ex_login_method='api-key')
+
+- Optionally check you can list available images from App Store::
+
+    pp(ss.list_images(ex_path='examples/images'))
+
+- Simple node creation (WordPress server)::
+
+     # Get the WordPress image
+     image = ss.get_image('apps/WordPress/wordpress')
+
+     # Create the Node::
+
+     node = ss.create_node(image=image
+
+- Complete application (node) deployment (WordPress server)::
+
+     # Get the WordPress image
+     image = ss.get_image('apps/WordPress/wordpress')
+
+- Set WordPress Title::
+
+     wordpress_title = 'WordPress deployed by SlipStream through Libcloud'
+
+-  Create the dict of parameters to (re)define::
+
+     parameters = dict(wordpress_title=wordpress_title)
+
+-  Create the Node::
+
+     node = ss.create_node(image=image, ex_parameters=parameters)
+
+- Wait the node to be ready::
+
+     ss.ex_wait_node_in_state(node)
+
+- Update the node::
+
+     node = ss.ex_get_node(node.id)
+
+-  Print the WordPress URL::
+
+     print node.extra.get('service_url')
+
+- Destroy the node (i.e terminate a deployment)::
+
+     ss.destroy_node(node)
+
+
+- Open a python session::
+
+  $ python
+
+- Import convenience modules::
+
+    import os
+    from pprint import pprint as pp
+
+- require modules for the slipstream driver::
+
+    import slipstream.libcloud.compute_driver
+    from libcloud.compute.providers import get_driver
+
+- create the driver itself::
+
+    slipstream_driver = get_driver('slipstream')
+
+- Log into Nuvla using API key and secret::
+
+    # KEY and SEare taken from the environment
+
+    ss = slipstream_driver(os.environ["KEY"],
+                           os.environ["SECRET"],
+                           ex_login_method='api-key')
+
+- Optionally check you can list available images from App Store::
+
+    pp(ss.list_images(ex_path='examples/images'))
+
+- Simple node creation (WordPress server)::
+
+     # Get the WordPress image
+     image = ss.get_image('apps/WordPress/wordpress')
+
+     # Create the Node::
+
+     node = ss.create_node(image=image
+
+- Complete application (node) deployment (WordPress server)::
+
+     # Get the WordPress image
+     image = ss.get_image('apps/WordPress/wordpress')
+
+- Set WordPress Title::
+
+     wordpress_title = 'WordPress deployed by SlipStream through Libcloud'
+
+-  Create the dict of parameters to (re)define::
+
+     parameters = dict(wordpress_title=wordpress_title)
+
+-  Create the Node::
+
+     node = ss.create_node(image=image, ex_parameters=parameters)
+
+- Wait the node to be ready::
+
+     ss.ex_wait_node_in_state(node)
+
+- Update the node::
+
+     node = ss.ex_get_node(node.id)
+
+-  Print the WordPress URL::
+
+     print node.extra.get('service_url')
+
+- Destroy the node (i.e terminate a deployment)::
+
+     ss.destroy_node(node)
+
 
 Using Libcloud directly on Advania, Exoscale, OTC
 -------------------------------------------------
