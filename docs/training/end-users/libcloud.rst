@@ -211,7 +211,7 @@ Using Libcloud for Nuvla deployment
 
      # Create the Node::
 
-     node = ss.create_node(image=image
+     node = ss.create_node(image=image)
 
 - Complete application (node) deployment (WordPress server)::
 
