@@ -131,14 +131,6 @@ Using Libcloud for Nuvla deployment
 
     pp(ss.list_images(ex_path='examples/images'))
 
-- Simple node creation (WordPress server)::
-
-     # Get the WordPress image
-     image = ss.get_image('apps/WordPress/wordpress')
-
-     # Create the Node::
-
-     node = ss.create_node(image=image)
 
 - Complete application (node) deployment (WordPress server)::
 
@@ -174,77 +166,7 @@ Using Libcloud for Nuvla deployment
      ss.destroy_node(node)
 
 
-- Open a python session::
 
-  $ python
-
-- Import convenience modules::
-
-    import os
-    from pprint import pprint as pp
-
-- require modules for the slipstream driver::
-
-    import slipstream.libcloud.compute_driver
-    from libcloud.compute.providers import get_driver
-
-- create the driver itself::
-
-    slipstream_driver = get_driver('slipstream')
-
-- Log into Nuvla using API key and secret::
-
-    # KEY and SECRET taken from the environment
-
-    ss = slipstream_driver(os.environ["KEY"],
-                           os.environ["SECRET"],
-                           ex_login_method='api-key')
-
-- Optionally check you can list available images from App Store::
-
-    pp(ss.list_images(ex_path='examples/images'))
-
-- Simple node creation (WordPress server)::
-
-     # Get the WordPress image
-     image = ss.get_image('apps/WordPress/wordpress')
-
-     # Create the Node::
-
-     node = ss.create_node(image=image)
-
-- Complete application (node) deployment (WordPress server)::
-
-     # Get the WordPress image
-     image = ss.get_image('apps/WordPress/wordpress')
-
-- Set WordPress Title::
-
-     wordpress_title = 'WordPress deployed by SlipStream through Libcloud'
-
--  Create the dict of parameters to (re)define::
-
-     parameters = dict(wordpress_title=wordpress_title)
-
--  Create the Node::
-
-     node = ss.create_node(image=image, ex_parameters=parameters)
-
-- Wait the node to be ready::
-
-     ss.ex_wait_node_in_state(node)
-
-- Update the node::
-
-     node = ss.ex_get_node(node.id)
-
--  Print the WordPress URL::
-
-     print node.extra.get('service_url')
-
-- Destroy the node (i.e terminate a deployment)::
-
-     ss.destroy_node(node)
 
 
 Using Libcloud directly on Exoscale
