@@ -2,14 +2,26 @@ Deploying on Nuvla
 ==================
 
 
-Deploying a base image without parameter
-----------------------------------------
+.. _centos:
 
-Deploying a component with parameter
+Deploying a base image (Centos 7)
+---------------------------------
+- After log in to Nuvla go to the AppStore
+
+- Search for the Centos 7 application and click on its Deploy button
+
+- On the "Deploy Application Component" you may optionnaly set the Tag field with comma separated values
+
+Because we will later use it when presenting the :ref:`libcloud` feature, we may set the values to "libcloud, training"
+
+
+Deploying a more complex application
 ------------------------------------
 
+TODO : Lamp example ??
 
 
+.. _oneclient:
 
 Deploying a OneClient application
 ---------------------------------
