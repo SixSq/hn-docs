@@ -2,13 +2,17 @@ Deploying on Nuvla
 ==================
 
 
-.. _centos:
+.. _libcloud-deploy:
 
-Deploying a base image (Centos 7)
----------------------------------
+Deploying a base image
+----------------------
 - After log in to Nuvla go to the AppStore
 
-- Search for the Centos 7 application and click on its Deploy button
+In the Training project, select the `Centos-libcloud` application
+
+https://nuv.la/module/Training/Centos-libcloud/
+
+- Click on its Deploy button
 
 - On the "Deploy Application Component" you may optionnaly set the Tag field with comma separated values
 
@@ -18,7 +22,11 @@ Because we will later use it when presenting the :ref:`libcloud` feature, we may
 Deploying a more complex application
 ------------------------------------
 
-TODO : Lamp example ??
+After log in to Nuvla, visit the URL where the component is defined :
+
+https://nuv.la/module/apps/LAMP/lamp-deployment
+
+
 
 
 .. _oneclient:

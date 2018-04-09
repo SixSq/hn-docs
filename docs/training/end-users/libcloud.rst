@@ -3,6 +3,10 @@
 Libcloud
 =========
 
+From your Dashbord, identify the Centos-libcloud component you have previously deployed
+(when :ref:`libcloud-deploy`) and click on its `Service URL` link
+
+
 Using the libcloud compute driver for Slipstream
 -------------------------------------------------
 For the browser-based interfaces to Nuvla and Onedata services, you can directly
@@ -24,9 +28,6 @@ Generating API key/secret on Nuvla
 
   $ alias ss-curl="curl --cookie-jar ~/cookies -b ~/cookies -sS"
 
-Windows users would make an equivalent with::
-
-  >doskey ss-curl=curl --cookie-jar "%USERPROFILE%\cookies" -b "%USERPROFILE%\cookies" -sS $*
 
 
 - Create a json file defining the nuvla session with your <username> and <password>::

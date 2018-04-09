@@ -30,8 +30,8 @@ You will be redirected to the OneProvider page where URL starts with `https://op
 
 In order to upload a file simply open the folder in which the file should be placed and drag the file into the browser window
 
-.. figure:: ../../images/draganddrop.png
-   :alt: OneData web interface
+.. figure:: ../../images/empty-op.png
+   :alt: OneProvider
    :width: 100%
    :align: center
 
@@ -39,7 +39,7 @@ Opening or downloading a file simply requires double clicking on the file in the
 
 *Make sure that the popups for this browser window are not blocked, and unblock them if necessary.*
 
-From this Web interface create some Directory and files.
+From this Web interface you can create some Directory and files.
 Addtionnaly you may use the Upload button
 
 
