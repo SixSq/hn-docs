@@ -6,13 +6,14 @@ Deploying on Nuvla
 
 Deploying a base image
 ----------------------
-- After log in to Nuvla visit the URL where the component is defined :
+
+- After logging into Nuvla open the `Centos-libcloud` application from the following link:
 
 https://nuv.la/module/Training/Centos-libcloud
 
 - Click on its Deploy button
 
-- On the "Deploy Application Component" you may optionnaly set the Tag field with comma separated values
+- On the "Deploy Application Component" dialog you may optionally set the Tag field with comma separated values
 
 Because we will later use it when presenting the :ref:`libcloud` feature, we may set the values to "libcloud, training"
 
