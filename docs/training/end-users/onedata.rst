@@ -40,7 +40,7 @@ Opening or downloading a file simply requires double clicking on the file in the
 *Make sure that the popups for this browser window are not blocked, and unblock them if necessary.*
 
 From this Web interface you can create some Directory and files.
-Addtionnaly you may use the Upload button
+Additionally you may use the Upload button
 
 
 Access files via POSIX
@@ -62,7 +62,7 @@ You should be redirected to the Centos 7 VM , with user root
 
 - Browse the directory which was set as `mount point` when :ref:`oneclient`
 
-If you haven't change the default it should be::
+If you haven't changed the default it should be::
 
   $ ls -l /mnt/onedata
 
@@ -72,18 +72,18 @@ You should find a 'space-load' folder which was provided by your OneZone admin
 
   $ ls -l ls -l /mnt/onedata/space-load/
 
-It should reflect the files you have upload with the web interface
+It should reflect the files you uploaded from the web interface
 
 
 - Creating files from OneClient
 
 Either::
 
-  $ touch /mnt//mnt/onedata/space-load/somefile
+  $ touch /mnt/onedata/space-load/somefile
 
 Or::
 
-  $ cp somefile /mnt//mnt/onedata/space-load/
+  $ cp somefile /mnt/onedata/space-load/
 
 
 After refreshing your OneProvider web page, you should see your new files in the web interface
