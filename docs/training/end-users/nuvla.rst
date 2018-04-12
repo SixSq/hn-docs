@@ -6,11 +6,9 @@ Deploying on Nuvla
 
 Deploying a base image
 ----------------------
-- After log in to Nuvla go to the AppStore
+- After log in to Nuvla visit the URL where the component is defined :
 
-In the Training project, select the `Centos-libcloud` application
-
-https://nuv.la/module/Training/Centos-libcloud/
+https://nuv.la/module/Training/Centos-libcloud
 
 - Click on its Deploy button
 
