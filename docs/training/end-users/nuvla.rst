@@ -47,8 +47,9 @@ It is expecting 4 input parameters
 
 1. access-token
 
-While it should be normally be provided by your Administrator, we have set a token for the purpose of this training :
-Set the Access token field to `MDAxNWxvY2F00aW9uIG9uZXpvbmUKMDAzMGlkZW500aWZpZXIgZDZiMjY2OTQyNzVkZmE5ZjBkZDgwNDU4ZTk2ODIwMmMKMDAxYWNpZCB00aW1lIDwgMTU1MzMzNTk4OQowMDJmc2lnbmF00dXJlIN0275UNBA02jdBNO961FDxeD4BQFt2DH5HN5t4QWQMaybCg`
+We have pre-created access tokens for each student account.
+You can copy them from [TODO]
+
 
 2. mount point
 
@@ -59,7 +60,7 @@ Set the Access token field to `MDAxNWxvY2F00aW9uIG9uZXpvbmUKMDAzMGlkZW500aWZpZXI
 This the Endpoint URL of your OneProvider instance
 Here we will set the value : `op-exo.hn.nuv.la`
 
-4.Version : The OneClient version is set to a default value which we will not touch
+4. Version : The OneClient version is set to a default value which we will not touch
 
 
 - Optionally set a tag value of your choice (e.g "training") in the Tags field

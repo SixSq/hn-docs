@@ -57,7 +57,8 @@ The component name should start with oneclient-ubuntu...
 
 - Click on its Service URL column (the value starts with ssh://...)
 
-You should be redirected to the Centos 7 VM , with user root
+ Assuming you added your SSH public key to your Nuvla profile (see :ref:`ssh`),
+ you should be redirected to the Centos 7 VM , with user root
  The VM is already running an instance of OneClient process to provide POSIX access to your data
 
 - Browse the directory which was set as `mount point` when :ref:`oneclient`

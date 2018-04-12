@@ -19,6 +19,8 @@ When requested , accept the Terms and conditions
 You will be redirected to the AppStore page of Nuvla
 
 
+.. _ssh:
+
 Setting SSH keys
 ----------------
 
