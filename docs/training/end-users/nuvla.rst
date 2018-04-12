@@ -10,7 +10,7 @@ Deploying a base image
 
 In the Training project, select the `Centos-libcloud` application
 
-https://nuv.la/module/Training/Centos-libcloud/
+https://nuv.la/module/Training/Centos-libcloud
 
 - Click on its Deploy button
 
