@@ -1,37 +1,52 @@
 .. _onedata:
 
-OneData
+Onedata
 ========
 
-Managing files via web interface
+Managing files via Web interface
 --------------------------------
 
-All files in Onedata are organized in spaces. The Web User interface allows for uploading new files as well as opening existing files.
+All files in Onedata are organized in spaces. The Web User interface allows for uploading and downloading files, creating access tokens, managing access rights, sharing spaces and joining other users spaces.
 
-A OneZone Web interface is already running at https://onezone.rhea-hn.com
+Onezone Web interface is already deployed at https://onezone.rhea-hn.com
 
-- Use your federated Login
+Login to Onezone
+----------------
 
-- Navigate to your provider
+Select your federated Login
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: ../../images/onedata_rhea_onezone_login.png
+   :alt: Onezone login
+   :width: 80%
+   :align: center
+
+Select your storage provider
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Onedata enables access to federated storage resources via distributed Oneprovider services, deployed close to actual storage resources in order to enable efficient local access and replication when necessary between the sites. Try to always to connect to the Oneprovider instance, which hosts the data on the storage which is closed to where the computation will be performed.
 
 .. figure:: ../../images/onezone.png
-   :alt: OneZone web interface
+   :alt: Onezone web interface
    :width: 100%
    :align: center
 
-- Navigate to your files
+Navigate to your files
+^^^^^^^^^^^^^^^^^^^^^^
+
+Press **Go to your files** button in the popup. The Oneprovider hostname is displayed in the popup, along with the provider name and storage quota dedicated to this space:
 
 .. figure:: ../../images/gotofile.png
    :alt: Go to files
    :width: 100%
    :align: center
 
-You will be redirected to the OneProvider page where URL starts with `https://op-exo.hn.nuv.la/`
+You will be redirected to the Oneprovider page, where URL starts with https://op-exo.hn.nuv.la
 
-In order to upload a file simply open the folder in which the file should be placed and drag the file into the browser window
+In order to upload a file simply open the folder in which the file should be placed and drag the file into the browser window:
 
 .. figure:: ../../images/empty-op.png
-   :alt: OneProvider
+   :alt: Oneprovider
    :width: 100%
    :align: center
 
@@ -39,53 +54,50 @@ Opening or downloading a file simply requires double clicking on the file in the
 
 *Make sure that the popups for this browser window are not blocked, and unblock them if necessary.*
 
-From this Web interface you can create some Directory and files.
+From this Web interface you can create some directories and files.
 Additionally you may use the Upload button
 
 
-Access files via POSIX
-----------------------
+Access files on a VM via POSIX
+------------------------------
 
-Files can also be accessed directly via POSIX protocol.
+Files can also be accessed directly via POSIX protocol on a Virtual Machine.
 
 SSH connection to the VM
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-- From the Nuvla dashboard, identify the deployment you have started when :ref:`oneclient`
+#. From the Nuvla dashboard, identify the deployment you have started when :ref:`oneclient`
 
-The component name should start with oneclient-ubuntu...
+   The component name should start with ``oneclient-ubuntu...``
 
-- Click on its Service URL column (the value starts with ssh://...)
+#. Click on its Service URL column (the value starts with ssh://...)
 
- Assuming you added your SSH public key to your Nuvla profile (see :ref:`ssh`),
- you should be redirected to the Centos 7 VM , with user root
- The VM is already running an instance of OneClient process to provide POSIX access to your data
+   Assuming you added your SSH public key to your Nuvla profile (see :ref:`ssh`),
+   you should be redirected to the Centos 7 VM as user ``root``.
+   The VM is already running an instance of Oneclient process to provide POSIX access to your data.
 
-- Browse the directory which was set as `mount point` when :ref:`oneclient`
+#. Browse the directory which was set as ``mount point`` when :ref:`oneclient`
 
-If you haven't changed the default it should be::
+   If you haven't changed the default it should be::
 
-  $ ls -l /mnt/onedata
+     $ ls /mnt/onedata
 
-You should find a 'space-load' folder which was provided by your OneZone admin
+   You should find a ``space-load`` folder which was provided by your Onezone admin
 
-- Read files from OneClient::
+#. Read files from Oneclient::
 
-  $ ls -l ls -l /mnt/onedata/space-load/
+   $ ls -lh /mnt/onedata/space-load/
 
-It should reflect the files you uploaded from the web interface
+   It should reflect the files you uploaded from the web interface
 
+#. Creating files from Oneclient
 
-- Creating files from OneClient
+   Either::
 
-Either::
+      $ touch /mnt/onedata/space-load/somefile
 
-  $ touch /mnt/onedata/space-load/somefile
+   Or::
 
-Or::
+     $ echo Grenoble > /mnt/onedata/space-load/file.txt
 
-  $ cp somefile /mnt/onedata/space-load/
-
-
-After refreshing your OneProvider web page, you should see your new files in the web interface
-
+   After refreshing your Oneprovider web page, you should see your new files in the web interface.
