@@ -6,6 +6,7 @@ Deploying on Nuvla
 
 Deploying a base image
 ----------------------
+
 - After logging into Nuvla open the `Centos-libcloud` application from the following link:
 
 https://nuv.la/module/Training/Centos-libcloud
