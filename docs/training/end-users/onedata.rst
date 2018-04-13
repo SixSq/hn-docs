@@ -34,6 +34,8 @@ Create an access token
 This token will be needed when using access via OneClient (see :ref:`posix`)
 
 
+
+
 Select your storage provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -43,6 +45,7 @@ Onedata enables access to federated storage resources via distributed Oneprovide
    :alt: Onezone web interface
    :width: 100%
    :align: center
+
 
 Navigate to your files
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -55,6 +58,25 @@ Press **Go to your files** button in the popup. The Oneprovider hostname is disp
    :align: center
 
 You will be redirected to the Oneprovider page, where URL starts with https://op-exo.hn.nuv.la
+
+
+Joining a space
+^^^^^^^^^^^^^^^
+
+A training space has been created. Go to the space menu and click on the "Join" button
+
+.. figure:: ../../images/op-join1.png
+   :alt: Joining a sp
+   :width: 80%
+   :align: center
+
+
+You have been provided with an invitation Token to be copy pasted here
+
+.. figure:: ../../images/op-join2.png
+   :alt: Joining a sp
+   :width: 80%
+   :align: center
 
 In order to upload a file simply open the folder in which the file should be placed and drag the file into the browser window:
 
