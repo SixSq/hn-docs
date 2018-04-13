@@ -82,7 +82,7 @@ Check the space support settings
 #. Select the newly support space from the list
 
 Check the space storage space in Onezone
----------------------------------------
+----------------------------------------
 
 #. Open Onezone interface in the browser: https://onezone.rhea-hn.com, or refresh if necessary
 #. Click on the supported space on the left
