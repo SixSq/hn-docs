@@ -21,6 +21,19 @@ Select your federated Login
    :width: 80%
    :align: center
 
+.. _access-token:
+
+Create an access token
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. figure:: ../../images/onedata_rhea_onezone_token.png
+   :alt: Onezone token
+   :width: 80%
+   :align: center
+
+This token will be needed when using access via OneClient (see :ref:`posix`)
+
+
 Select your storage provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -58,17 +71,59 @@ From this Web interface you can create some directories and files.
 Additionally you may use the Upload button
 
 
+.. _posix:
+
 Access files on a VM via POSIX
 ------------------------------
 
 Files can also be accessed directly via POSIX protocol on a Virtual Machine.
 
+.. _oneclient:
+
+Deploying a OneClient application
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After log in to Nuvla, visit the URL where the component is defined :
+
+https://nuv.la/module/HNSciCloud/onedata/oneclient-ubuntu16.04
+
+It is setup a OneClient instance onto an Ubuntu system
+
+It is expecting 4 input parameters
+
+  .. figure:: ../../images/oneclient-params.png
+     :alt: OneClient deployment parameters
+     :width: 100%
+     :align: center
+
+1. access-token
+
+Copy paste the Access Token you had created in OneZone (see :ref:`access-token`)
+
+
+2. mount point
+
+It is the location where data coming coming from OneProvider spaces will be mounted. You can keep the default
+
+3. provider-hostname
+
+This the Endpoint URL of your OneProvider instance
+Here we will set the value : `op-exo.hn.nuv.la`
+
+4. Version : The OneClient version is set to a default value which we will not touch
+
+
+- Optionally set a tag value of your choice (e.g "training") in the Tags field
+
+- Hit the "Deploy Application Component" button
+
+
+
+
 SSH connection to the VM
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. From the Nuvla dashboard, identify the deployment you have started when :ref:`oneclient`
-
-   The component name should start with ``oneclient-ubuntu...``
+#. From the Nuvla dashboard, wait for the OneClient deployment to be ready
 
 #. Click on its Service URL column (the value starts with ssh://...)
 
@@ -76,7 +131,7 @@ SSH connection to the VM
    you should be redirected to the Centos 7 VM as user ``root``.
    The VM is already running an instance of Oneclient process to provide POSIX access to your data.
 
-#. Browse the directory which was set as ``mount point`` when :ref:`oneclient`
+#. Browse the directory which was set as ``mount point`` parameter when :ref:`oneclient`
 
    If you haven't changed the default it should be::
 
