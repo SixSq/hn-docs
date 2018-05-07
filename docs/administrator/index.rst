@@ -23,10 +23,8 @@ and login.
    :maxdepth: 1
    :hidden:
 
-   cloud-configuration
    groups
    roles
-   quota
    management-api
    blacklisting
    whitelisting

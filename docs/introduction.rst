@@ -22,22 +22,14 @@ foundation of engineering expertise, existing open source software and
 commercial services:
 
 - RHEA System Engineering & Cyber Security expertise
-- SixSq’s Nuvla, a SlipStream-based hybrid-cloud management service
 - Cyfronet’s OneData for Data Management
-- Advania's IaaS Cloud Infrastructure (OpenStack)
 - Exoscale IaaS Cloud Service (CloudStack)
-- Open Telekom Cloud, T-Systems’ IaaS Cloud Service (OpenStack)
 
 The R&D innovations will be incorporated into these services as part
 of our commercial offerings, with minimum intrusion into the buyers’
 infrastructure, including:
 
 - Peta-scale data management solution, portable to any cloud
-- Flexible container management
-- Single dashboard to better manage hybrid resources, including SLA
-  compliance monitoring
-- Unified accounting, integrating multi-cloud provider charges and
-  billing
 - Authentication from user to cloud providers
 
 The Pilot (Phase 3) exercises the Consortium's platform at a larger
@@ -61,23 +53,16 @@ Our solution includes the following main components:
 - Authentication (KeyCloak): federates external identity providers,
   allowing users to use their “home” credentials to access the hybrid
   cloud platform
-- Orchestration (Nuvla): allows users to manage the full lifecycle of
-  cloud applications with a high degree of automation
-- Data Management (Onedata + GlusterFS/S3): allows users to access and
-  to manage large datasets hosted in hybrid cloud infrastructures
-  and/or at a Buyers Group organization with minimum intrusion
+- Orchestration (Exoscale): manage the lifecycle of application with
+  Libcloud or Terraform.
+- Data Management (Onedata): allows users to access and to manage
+  large datasets hosted in hybrid cloud infrastructures and/or at a
+  Buyers Group organization with minimum intrusion
 - Networking (peering with GÉANT): allows access to all the platform
   services from anywhere with enhanced access from sites connected to
   GÉANT
-- Cloud Resources (Advania, Exoscale, and OTC): IaaS and storage
-  services accessible from the hybrid cloud platform
-- Dashboard (Nuvla): provides an overview of Users’ current
-  activities, resource utilisation, and costs.
-
-.. figure:: images/architecture-overview.png
-   :alt: Support Desk Diagram
-   :width: 50%
-   :align: center
+- Cloud Resources (Exoscale): IaaS and storage services accessible
+  from the cloud platform
 
 The integration of these key components was demonstrated during the
 prototype phase.  The pilot phase will concentrate on validating the
@@ -128,10 +113,6 @@ Account Coordinator
 Platform User or User
     A Researcher, Application Operator, Data Service Operator,
     Application Developer, Data Coordinator, Account Coordinator.
-
-Broker Service Provider
-    The organization that provides the cloud application management
-    and brokering services for the platform, i.e. Nuvla.
 
 Service Provider
     A "broker service provider" or "IaaS service provider".

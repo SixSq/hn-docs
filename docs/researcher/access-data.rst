@@ -15,24 +15,6 @@ At this time, it is assumed that the distributed Onedata infrastructure is
 already deployed by the Buyer's Group :ref:`data-coordinator` and the endpoints of
 Onezone and Oneproviders are available.
 
-Using Nuvla to provision data access client
--------------------------------------------
-
-Users access their data on VMs using POSIX.  The data becomes available on the
-VMs via mounting the required data sources with the help of `Oneclient tool
-<https://onedata.org/#/home/documentation/doc/using_onedata/oneclient.html>`_.
-When deploying VMs via `Nuvla <https://nuv.la>`_ service, users should use or,
-when building their own components, inherit from `oneclient-<OS>` components,
-which are available at https://nuv.la/module/HNSciCloud/onedata.
-
-At the moment, for `oneclinet` to mount the data volumes on VMs and enable
-POSIX access to the data, users need to provide it with a data access token and
-the Cloud local Oneprovider endpoint.
-
-Next versions of the platform will be extended to contain the auto-discovery of
-the Cloud local Oneprovider as well as auto-generation of the data access
-token.
-
 Obtaining Onedata data Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -71,16 +53,8 @@ in the top right corner of the popup:
 Provision VM for data access
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here it is explained on the example of CentOS 7 image.  Go to
-https://nuv.la/module/HNSciCloud/onedata/oneclient-centos7 and click on
-`Deploy`.
-
-.. image:: images/oneclient-deploy.png
-
-Select the Cloud on which you want to deploy the client via `Cloud` drop-down.
-Provide **access-token** and **provider-hostname** parameters.   Optionally
-change the default mount point of the spaces in **mount-point** parameter.
-Then, click `Deploy Application Component` button.
+Provision a VM on the cloud infrastructure with the Oneclient
+software, for example a CentOS 7 machine.
 
 Accessing data on VM
 --------------------

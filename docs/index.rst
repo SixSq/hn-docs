@@ -7,14 +7,11 @@ Rhea Hybrid Cloud Documentation
    :hidden:
 
    introduction.rst
-   getting-started/index.rst
    researcher/index.rst
    administrator/index.rst
    data-manager/index.rst
    support.rst
    service-docs.rst
-   demo/index.rst
-   training/index.rst
    consortium.rst
 
 

@@ -1,10 +1,10 @@
 Consortium
 ==========
 
-The consortium consists of six organizations that have experience
+The consortium consists of four organizations that have experience
 working together to deliver computing solutions. Rhea leads the
 consortium consisting of software providers (SixSq and CYFRONET) and
-cloud service providers (Advania, Exoscale, and T-Systems).
+a cloud service provider (Exoscale).
 
 .. image:: images/logo-rhea.png
    :width: 75px
@@ -21,8 +21,7 @@ is based in Belguim. [`more info <https://www.rheagroup.com>`_]
    :width: 60px
 
 Responsible for technical coordination, SixSq brings its knowledge of
-cloud technologies and its innovations from the Nuvla cloud
-application management platform. SixSq is based in Geneva,
+cloud technologies to the platform.  SixSq is based in Geneva,
 Switzerland.  [`more info <http://sixsq.com>`_]
 
 .. image:: images/logo-cyfronet.png
@@ -34,15 +33,6 @@ solution, allowing for easy deployment of the platform.  Academic
 Computer Centre CYFRONET AGH is based in Krakow, Poland. [`more info
 <http://www.cyfronet.krakow.pl/en/4421,main.html>`_]
 
-.. image:: images/logo-advania.svg
-   :width: 100px
-
-Advania is a leading Nordic IT-provider serving thousands of corporate
-clients in the public and private sector. Advania provides a cloud
-infrastructure located in Iceland and optimized for high-performance
-applications to the Consortium's hybrid cloud platform. [`more info
-<https://advania.com/>`_]
-                  
 .. image:: images/logo-exoscale.svg
    :width: 150px
 
@@ -53,13 +43,4 @@ provides cloud resources in Switzerland, Austria, and Germany to the
 Consortium's hybrid cloud platform.  [`more info
 <https://exoscale.ch>`_]
 
-.. image:: images/logo-t-systems.png
-   :width: 120px
-
-European leader in IT service delivery, including several cloud
-services, both public and private. Open Telekom Cloud, with resources
-in Germany, forms the foundation of its contribution to the project.
-The company’s experience will also be key in contributing to the
-business model proposed for the resulting service of this
-project. [`more info <https://www.t-systems.com/de/en>`_]
 
